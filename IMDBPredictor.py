@@ -352,7 +352,7 @@ test['release_date'] = pd.to_datetime(test['release_date'])
 
 
 def process_date(df):
-    date_parts = ["year", "weekday", "month", 'weekofyear', 'day', 'quarter']
+    date_parts = ["year", "month", 'weekofyear', 'quarter']
     for part in date_parts:
         part_col = 'release_date' + "_" + part
         df[part_col] = getattr(df['release_date'].dt, part).astype(int)
